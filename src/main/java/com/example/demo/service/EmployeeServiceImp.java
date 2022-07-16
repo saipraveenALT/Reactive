@@ -9,26 +9,28 @@ import reactor.core.publisher.Mono;
 public class EmployeeServiceImp implements EmployeeService {
 
     @Autowired
-    private EmployeeRepository employeeRepository;
+    EmployeeRepository employeeRepository;
+
 
     @Override
-    public Flux<Employee> allEmployees() {
-        return employeeRepository.allEmployees();
+    public Flux<Employee> listOfEmployees() {
+        return employeeRepository.listOfEmployees();
     }
 
     @Override
-    public Mono<Employee> uniEmployee(int id) {
-        return employeeRepository.uniEmployee(id);
+    public Mono<Employee> getEmployee(int id) {
+        return employeeRepository.getEmployee(id);
     }
 
     @Override
+
     public Mono<Employee> addEmployee(Employee employee) {
         return employeeRepository.addEmployee(employee);
     }
 
     @Override
-    public Mono deleteEmployee(int id) {
-        return employeeRepository.deleteEmployee(id);
+    public Mono deleteEmployeeById(int id) {
+        return employeeRepository.deleteEmployeeById(id);
     }
 
     @Override

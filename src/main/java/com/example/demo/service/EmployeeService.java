@@ -5,13 +5,13 @@ import reactor.core.publisher.Mono;
 
 
 public interface EmployeeService {
-    Flux<Employee> allEmployees();
+    Flux<Employee> listOfEmployees();
 
-    Mono<Employee> uniEmployee(int id);
+    Mono<Employee> getEmployee(int id);
 
     Mono<Employee> addEmployee(Employee employee);
 
-    Mono<Employee> deleteEmployee(int id);
+    Mono<Employee> deleteEmployeeById(int id);
 
     Mono<Employee> updateEmployee(Employee employee,int id);
 }

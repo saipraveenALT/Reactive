@@ -16,12 +16,12 @@ public class EmployeeController {
     EmployeeService employeeService;
     @GetMapping("/employees")
     public Flux<Employee> listEmployees(){
-        return employeeService.allEmployees();
+        return employeeService.listOfEmployees();
     }
 
     @GetMapping("/employees/{id}")
     public Mono<Employee> getEmployee(@PathVariable("id") int id){
-        return employeeService.uniEmployee(id);
+        return employeeService.getEmployee(id);
     }
     
     @PostMapping(value = "/employees")
@@ -31,7 +31,7 @@ public class EmployeeController {
 
     @DeleteMapping("/employees/{id}")
     public Mono<Employee> deleteEmployeeById(@PathVariable("id") int id){
-        return employeeService.deleteEmployee(id);
+        return employeeService.deleteEmployeeById(id);
     }
 
     @PutMapping("/employees/{id}")
